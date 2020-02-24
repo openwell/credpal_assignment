@@ -1,3 +1,10 @@
+import VPN from './vpn/index';
+import Login from './animatedLogin/index';
+import PAN from './spring/index';
+import Todo from './projects/todo';
+
+
+
 multiline for text to get something textarea
 keyboardType='numeric' and others
 <Button title='ADD'/>
