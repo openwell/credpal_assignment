@@ -23,6 +23,13 @@ const profile = ({ navigation }) => {
         enableOnAndroid={true}
         extraHeight={Platform.select({ android: 100 })}
       >
+        <View style={styles.progressTab}>
+          <View style={[styles.progressItem, styles.progressItemActive]} />
+          <View style={styles.progressItem} />
+          <View style={styles.progressItem} />
+          <View style={styles.progressItem} />
+          <View style={styles.progressItem} />
+        </View>
         <View style={{ marginVertical: 20 }}>
           <Text style={styles.h1}>Complete profile</Text>
           <Text style={styles.p}>
@@ -166,6 +173,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     opacity: 0.5
+  },
+  progressTab: {
+    flexDirection: 'row'
+  },
+  progressItemActive: {
+    opacity: 1,
+    marginLeft: 10
+  },
+  progressItem: {
+    width: 55,
+    height: 5,
+    marginLeft: 20,
+    marginTop: 10,
+    borderRadius: 10,
+    backgroundColor: '#274FED',
+    opacity: 0.1
   }
 });
 export default profile;
