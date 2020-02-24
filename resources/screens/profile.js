@@ -123,7 +123,7 @@ const profile = ({ navigation }) => {
           style={styles.footerButton}
           onPress={() => navigation.navigate('Edit')}
         >
-          <Text style={styles.footerButton}>NEXT</Text>
+          <Text style={styles.footerButtonText}>NEXT</Text>
         </TouchableOpacity>
 
         <Text style={styles.secureNote}>
@@ -139,11 +139,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 15
-  },
-  footerButton: {
-    textAlign: 'center',
-    padding: 12,
-    color: '#fff'
   },
   twoCol: {
     flexDirection: 'row',
@@ -165,6 +160,11 @@ const styles = StyleSheet.create({
     marginHorizontal: '20%',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  footerButtonText: {
+    textAlign: 'center',
+    padding: 12,
+    color: '#fff'
   },
   secureNote: {
     textAlign: 'center',

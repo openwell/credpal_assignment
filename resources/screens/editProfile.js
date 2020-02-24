@@ -122,10 +122,7 @@ const edit = ({ navigation }) => {
           </View>
         </View>
 
-        <Button
-          title="Go to Details"
-          onPress={() => navigation.navigate('Home')}
-        />
+        <Button title="back" onPress={() => navigation.navigate('Home')} />
       </KeyboardAwareScrollView>
     </SafeAreaView>
   );

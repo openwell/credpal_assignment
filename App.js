@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Cred from './Credpal';
+import Index from './resources';
 export default class App extends Component {
   render() {
-    return <Cred />;
+    return <Index />;
   }
 }

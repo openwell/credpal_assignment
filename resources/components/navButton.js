@@ -5,7 +5,7 @@ const navButton = props => {
   const { action } = props;
   return (
     <View>
-      <TouchableOpacity style={styles.button} onPress>
+      <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>Save</Text>
       </TouchableOpacity>
     </View>
