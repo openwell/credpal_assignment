@@ -6,77 +6,128 @@ import {
   StyleSheet,
   TextInput,
   Picker,
-  SafeAreaView
+  SafeAreaView,
+  Platform,
+  KeyboardAvoidingView
 } from 'react-native';
+import InputSelect from '../components/inputSelect';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const edit = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.h1}>Edit Profile</Text>
-      <View style={styles.infoTab}>
-        <Text style={styles.infoTabItem}>Personal</Text>
-        <Text style={styles.infoTabItem}>Security</Text>
-        <Text
-          style={StyleSheet.flatten([styles.infoTabItem, styles.activeTab])}
-        >
-          Others
-        </Text>
-      </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <KeyboardAwareScrollView
+        style={styles.container}
+        enableAutomaticScroll
+        extraScrollHeight={30}
+        enableOnAndroid={true}
+        extraHeight={Platform.select({ android: 100 })}
+      >
+        <Text style={styles.h1}>Edit Profile</Text>
+        <View style={styles.infoTab}>
+          <Text style={styles.infoTabItem}>Personal</Text>
+          <Text style={styles.infoTabItem}>Security</Text>
+          <Text
+            style={StyleSheet.flatten([styles.infoTabItem, styles.activeTab])}
+          >
+            Others
+          </Text>
+        </View>
 
-      <View>
-        <View style={styles.twoCol}>
-          <Text style={styles.label}>Employer</Text>
-          <TextInput
-            value="CredPal Limited"
-            placeholder="Name"
-            style={styles.input}
-          ></TextInput>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Employer</Text>
+            <TextInput
+              value="CredPal Limited"
+              placeholder="Name"
+              style={styles.input}
+            ></TextInput>
+          </View>
         </View>
-      </View>
-      <View>
-        <View style={styles.twoCol}>
-          <Text style={styles.label}>Office Address</Text>
-          <TextInput
-            value="75, Olonode Street, A...ba, Lagos."
-            placeholder="Address"
-            style={styles.input}
-          ></TextInput>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Office Address</Text>
+            <TextInput
+              value="75, Olonode Street, A...ba, Lagos."
+              placeholder="Address"
+              style={styles.input}
+            ></TextInput>
+          </View>
         </View>
-      </View>
-      <View>
-        <View style={styles.twoCol}>
-          <Text style={styles.label}>Job Title</Text>
-          <TextInput
-            placeholder="Job Title"
-            value="Graphics  UI/UX Designer"
-            style={styles.input}
-          ></TextInput>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Job Title</Text>
+            <TextInput
+              placeholder="Job Title"
+              value="Graphics  UI/UX Designer"
+              style={styles.input}
+            ></TextInput>
+          </View>
         </View>
-      </View>
-      <View>
-        <View style={styles.twoColPicker}>
-          <Text style={styles.pickerLabel}>Contract Type</Text>
-          <Picker style={{ height: 30 }} style={styles.picker}>
-            <Picker.Item label="Full Time" value="1" />
-            <Picker.Item label="Contract" value="2" />
-          </Picker>
+        <View>
+          <View style={styles.twoColPicker}>
+            <Text style={styles.pickerLabel}>Contract Type</Text>
+            <InputSelect
+              propStyles={styles.picker}
+              options={['Full-Time', 'Contract']}
+            />
+          </View>
         </View>
-      </View>
-      <View>
-        <View style={styles.twoCol}>
-          <Text style={styles.label}>Salary</Text>
-          <TextInput
-            placeholder="N.00"
-            value="₦ 840,000"
-            style={styles.input}
-          ></TextInput>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Salary</Text>
+            <TextInput
+              placeholder="N.00"
+              value="₦ 840,000"
+              style={styles.input}
+            ></TextInput>
+          </View>
         </View>
-      </View>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Next of Kin</Text>
+            <TextInput
+              placeholder="John"
+              value="Oshokoya Joseph"
+              style={styles.input}
+            ></TextInput>
+          </View>
+        </View>
+        <View>
+          <View style={styles.twoColPicker}>
+            <Text style={styles.pickerLabel}>Relationship</Text>
+            <InputSelect
+              propStyles={styles.picker}
+              options={['Brother', 'Sister']}
+            />
+          </View>
+        </View>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Address</Text>
+            <TextInput
+              placeholder="address"
+              value="Route 7, Ink Park, Toronto,...o, CA."
+              style={styles.input}
+            ></TextInput>
+          </View>
+        </View>
+        <View>
+          <View style={styles.twoCol}>
+            <Text style={styles.label}>Contact Number</Text>
+            <TextInput
+              placeholder="080********"
+              value="0708 188 8124"
+              style={styles.input}
+            ></TextInput>
+          </View>
+        </View>
 
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Home')}
-      />
+        <Button
+          title="Go to Details"
+          onPress={() => navigation.navigate('Home')}
+        />
+      </KeyboardAwareScrollView>
     </SafeAreaView>
   );
 };
