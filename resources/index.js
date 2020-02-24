@@ -3,7 +3,6 @@ import Profile from './screens/profile';
 import Edit from './screens/editProfile';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import { Text, Button } from 'react-native';
 import NavButton from './components/navButton';
 const index = () => {
   const Stack = createStackNavigator();

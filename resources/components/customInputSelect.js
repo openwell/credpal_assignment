@@ -29,7 +29,6 @@ const inputSelect = props => {
 const styles = StyleSheet.create({
   inputContainer: {
     position: 'relative',
-    // marginVertical: 4,
     flex: 1
   },
   icon: {

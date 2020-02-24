@@ -7,8 +7,7 @@ import {
   TextInput,
   Picker,
   SafeAreaView,
-  Platform,
-  KeyboardAvoidingView
+  Platform
 } from 'react-native';
 import InputSelect from '../components/inputSelect';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
